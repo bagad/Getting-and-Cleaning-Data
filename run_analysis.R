@@ -47,8 +47,8 @@ final_merged_data <- rbind(final_train_dataset, final_test_dataset)
 
 ## Extract required measurements on the mean and standard deviation for each measurement.
 target_features <- grepl("[Mm][Ee][Aa][Nn]|[Ss][Tt][Dd]", features_label)
-final_x_test = x_test[,target_features]
-final_x_train = x_train[,target_features]
+final_x_test = x_test_data[,target_features]
+final_x_train = x_train_data[,target_features]
 
 ## Merge final data set for mean and standard only
 train_data <- cbind(as.data.table(subject_train_data), y_train_data, final_x_train)
